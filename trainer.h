@@ -8,7 +8,7 @@ class Trainer {
   public:
     Trainer(size_t persistStrideIn);
     void run();
-    void register_callback(std::function<void(int)> callback);
+    void registerCallback(std::function<void(int)> callback);
 
   private:
     size_t persistStride;
@@ -17,11 +17,15 @@ class Trainer {
 
 Trainer::Trainer(size_t persistStrideIn) {
   persistStride = persistStrideIn;
-}
+};
+
+void Trainer::registerCallback(std::function<void(int)> callback) {
+  callbacks.emplace_back(callback);
+};
 
 void Trainer::run() {
   for (auto callback : callbacks) {
     callback(10);
   }
-}
+};
 

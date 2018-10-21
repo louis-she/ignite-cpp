@@ -5,7 +5,10 @@
 int main() {
 
   Trainer t(5);
-  t.register_callback(sample_callback);
+  t.registerCallback(sample_callback);
+  t.registerCallback(sample_callback);
+  t.registerCallback(sample_callback);
+  t.registerCallback(sample_callback);
   t.run();
 
   return 0;
