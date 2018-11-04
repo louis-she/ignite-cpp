@@ -2,3 +2,5 @@
 *.a
 *.o
 .vscode
+build
+a.out
